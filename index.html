@@ -1,1 +1,95 @@
-#五周年快乐
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>小增的男神与小增的网站</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">/**</span><br />
+			<span class="space"/><span class="comments">*2013—12-14,</span><br />
+			<span class="space"/><span class="comments">*2018-12-14.</span><br />
+			<span class="space"/><span class="comments">*/</span><br />
+			男神 = <span class="keyword">大文</span><br />
+			女生 = <span class="keyword">小王八</span><br />
+			<span class="comments"> 2013 年 </span><br />
+			<span class="comments">他 们 坠 入 爱 河. </span><br />
+			他 们 一 起 成 长;<br />
+			<span class="comments">他 们 互 相 包 容.</span><br />
+			他 们 共 同 进 步;<br />
+			<span class="comments">他 们 青 春 正 逝.</span><br />
+			他 们 爱 不 停 止;<br />
+			
+			<br>
+			<br>
+			I want say:<br />
+			<br>
+			baby<span class="keyword">    我 爱 你 </span>
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					小王八，这是我们在一起的时光。
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					五周年快乐。
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2018, 12, 14);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 5000);
+
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 600);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+</body>
+</html>
